@@ -9,7 +9,8 @@ import {
 
 import "./sign-in-form.styles.scss";
 import { ReactComponent as GoogleLogo } from "../../assets/Google_Logo.svg";
-import ErrorModal from "../error-modal/error-modal.component";
+
+import "../error-modal/error-modal.scss";
 
 const defaultFormFields = {
   email: "",
@@ -48,7 +49,8 @@ const SignInForm = () => {
         setErrorMessage("Incorrect password for email!");
       }
       setError(true);
-      setTimeout(() => setError(false), 7000);
+      // it can help to auto close a modal
+      // setTimeout(() => setError(false), 7000);
     }
   };
 
@@ -61,9 +63,20 @@ const SignInForm = () => {
     });
   };
 
+  const onClickHandler = () => {
+    setError(false);
+  };
+
   return (
     <div className="sign-up-container">
-      {error && <ErrorModal text={errorMessage} />}
+      {error && (
+        <div className="modal">
+          <h2>Something went wrong 🤷‍♀️</h2>
+          <div className="message">{errorMessage}</div>
+          <Button onClick={onClickHandler}>Ok</Button>
+        </div>
+      )}
+
       <h2>Already have an account?</h2>
       <span>Sign in with your email and password</span>
 

@@ -25,5 +25,25 @@
       padding: 10px 15px;
       cursor: pointer;
     }
+
+    a {
+      position: relative;
+    }
+
+    a::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      height: 1px;
+      width: 0;
+      background-color: #000;
+      transition: all 0.2s ease;
+    }
+
+    a:hover::after {
+      width: 100%;
+      left: 0;
+    }
   }
 }

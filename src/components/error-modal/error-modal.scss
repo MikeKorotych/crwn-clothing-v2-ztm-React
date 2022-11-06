@@ -1,0 +1,26 @@
+.modal {
+  padding: 2rem;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  box-shadow: 0 0 1000px 1000px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+  transition: opacity 0.2s ease;
+
+  .message {
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+}
+
+.hidden {
+  pointer-events: none;
+  opacity: 0;
+}

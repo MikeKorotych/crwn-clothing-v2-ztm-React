@@ -26,8 +26,7 @@ const SignInForm = () => {
   };
 
   const signInWithGoogle = async () => {
-    const { user } = await signInWithGooglePopup();
-    await createUserDocFromAuth(user);
+    await signInWithGooglePopup();
   };
   const [error, setError] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
@@ -36,8 +35,8 @@ const SignInForm = () => {
     event.preventDefault();
 
     try {
-      const response = await signInUserWithEmailAndPassword(email, password);
-      console.log(response);
+      const { user } = await signInUserWithEmailAndPassword(email, password);
+
       resetFormFields();
       setError(false);
     } catch (err) {

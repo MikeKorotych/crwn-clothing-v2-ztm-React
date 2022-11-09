@@ -8,6 +8,7 @@ import { UserProvider } from "./contexts/user-context.jsx";
 
 import "./index.css";
 import { ProductsProvider } from "./contexts/product.context.jsx";
+import { CartProvider } from "./contexts/cart.context";
 
 const container = document.getElementById("root");
 const root = createRoot(container);
@@ -16,7 +17,9 @@ root.render(
   <BrowserRouter>
     <UserProvider>
       <ProductsProvider>
-        <App />
+        <CartProvider>
+          <App />
+        </CartProvider>
       </ProductsProvider>
     </UserProvider>
   </BrowserRouter>

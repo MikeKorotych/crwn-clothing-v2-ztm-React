@@ -32,7 +32,7 @@ const Home = () => {
 
   return (
     <>
-      <Directory categories={categories}></Directory>;
+      <Directory categories={categories}></Directory>
       <Outlet />
     </>
   );

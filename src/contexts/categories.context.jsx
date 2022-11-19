@@ -15,12 +15,14 @@ export const CategoriesProvider = ({ children }) => {
     const getCategoriesMap = async () => {
       const categoryMap = await getCollectionAndDocuments();
       console.log(categoryMap);
+
+      setCategoriesMap(categoryMap);
     };
 
     getCategoriesMap();
   }, []);
 
-  const value = {};
+  const value = { categoriesMap };
 
   return (
     <CategoriesContext.Provider value={value}>

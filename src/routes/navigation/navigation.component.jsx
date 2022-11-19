@@ -4,7 +4,7 @@ import { signOutUser } from "../../utils/firebase/firebase.utils.js";
 
 import CartIcon from "../../components/cart-icon/cart-icon.component.jsx";
 import { ReactComponent as CrwnLogo } from "../../assets/crown.svg";
-import "./navigation.styles.scss";
+import { NavigationContainer } from "./navigation.styles.jsx";
 
 import { UserContext } from "../../contexts/user-context.jsx";
 import { CartContext } from "../../contexts/cart.context.jsx";
@@ -15,8 +15,8 @@ const Navigation = () => {
 
   return (
     <Fragment>
-      <div className="navigation">
-        <Link to="/">
+      <NavigationContainer>
+        {/* <Link to="/">
           <CrwnLogo className="logo" />
         </Link>
         <div className="nav-links-container">
@@ -34,8 +34,8 @@ const Navigation = () => {
           )}
           <CartIcon />
         </div>
-        {isCartOpen && <CartDropdown />}
-      </div>
+        {isCartOpen && <CartDropdown />} */}
+      </NavigationContainer>
       <Outlet />
     </Fragment>
   );

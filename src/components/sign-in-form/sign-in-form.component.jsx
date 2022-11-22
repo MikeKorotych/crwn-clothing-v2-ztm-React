@@ -1,5 +1,7 @@
 import React, { useState } from "react";
-import Button from "../button/button.comopnent";
+
+import { BaseButton, GoogleSignInButton } from "../button/button.styles";
+
 import FormInput from "../form-input/form-input.component";
 import {
   createUserDocFromAuth,
@@ -72,7 +74,7 @@ const SignInForm = () => {
         <div className="modal">
           <h2>Something went wrong 🤷‍♀️</h2>
           <div className="message">{errorMessage}</div>
-          <Button onClick={onClickHandler}>Ok</Button>
+          <BaseButton onClick={onClickHandler}>Ok</BaseButton>
         </div>
       )}
 
@@ -99,11 +101,15 @@ const SignInForm = () => {
         />
 
         <div className="buttons-container">
-          <Button type="submit">Sign In</Button>
-          <Button type="button" buttonType="google" onClick={signInWithGoogle}>
+          <BaseButton type="submit">Sign In</BaseButton>
+          <GoogleSignInButton
+            type="button"
+            buttonType="google"
+            onClick={signInWithGoogle}
+          >
             <GoogleLogo />
             Google auth
-          </Button>
+          </GoogleSignInButton>
         </div>
       </form>
     </div>

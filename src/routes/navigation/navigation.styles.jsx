@@ -7,8 +7,8 @@ export const NavigationContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 25px;
-  margin: 25px;
+  /* margin-bottom: 25px; */
+  margin: 0 25px 25px 25px;
   padding: 0 20px;
 `;
 
